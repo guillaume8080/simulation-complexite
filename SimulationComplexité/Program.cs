@@ -23,8 +23,10 @@ using SimulationComplexité.Stratégies.Prédéfinies;
 
 const int coûtDUnDé = 180;
 const int nombreDés = 12;
-const int nombreParties = 1000;
-const bool verbose = false;
+// 1000
+const int nombreParties = 100;
+//false
+const bool verbose = true;
 
 var stratégiesQualité = new IStratégieQualité[]
 {

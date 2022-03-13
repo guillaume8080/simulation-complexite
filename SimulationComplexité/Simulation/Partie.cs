@@ -44,7 +44,8 @@ namespace SimulationComplexité.Simulation
                         Convert.ToUInt32(valeurProduiteBrute), 
                         complexitéAccidentelle,
                         historiqueValeurProduite.Sum(),
-                        _paramètres.CoûtDUnDé);
+                        _paramètres.CoûtDUnDé
+                    );
 
                     var investissementProduit = valeurProduiteBrute - investissementQualité;
                     _sortie.WriteLine($"{investissementQualité} investi en qualité. {investissementProduit} investis dans le produit.");
@@ -52,8 +53,14 @@ namespace SimulationComplexité.Simulation
                     historiqueValeurProduite.Push(Convert.ToUInt32(investissementProduit));
 
                     var différenceComplexitéAdditionnelle = investissementProduit - investissementQualité;
-                    var complexitéPotentielle = complexitéAccidentelle + différenceComplexitéAdditionnelle;
                     
+                    
+                    
+                    var complexitéPotentielle = complexitéAccidentelle + différenceComplexitéAdditionnelle;
+                    if (complexitéPotentielle < 0)
+                    {
+                        complexitéPotentielle = 0;
+                    }
                     complexitéAccidentelle = Convert.ToUInt32(complexitéPotentielle);
                 }
                 else
