@@ -15,6 +15,11 @@ namespace SimulationComplexité.Stratégies
         {
             _iteration ++;
             uint investissementQualite = this.soustractionInvestissementProduitInvestQualitéNull(valeurProduiteBrute, _iteration);
+
+            if (complexitéAccidentelleActuelle + scoreProduitActuel >= 1056)
+            {
+                return this.pondreUneDerniereFeature();
+            }
             
             return investissementQualite;
         }
@@ -81,12 +86,30 @@ namespace SimulationComplexité.Stratégies
                         _sommeInvestissementQualite = _sommeInvestissementQualite + (int) investissemntQualite;
                     }
                 }
+                
+                return Convert.ToUInt32(investissemntQualite);
+        }
 
-                if (_iteration > 130)
-                {
-                    return Convert.ToUInt32(investissemntQualite);
-                }
-            return Convert.ToUInt32(investissemntQualite);
+        public uint admettreCroissanceEntropie(int iteration)
+        {
+            // DETAIL RAISONNEMENT :
+            // Cet algo a pour but de stimuler l 'investissement produit en relativisant l'investissement qualité
+            // Quelsques constantes:
+            // nb d'itéarations myens : 144
+            // Point de non retour  = 1061
+            //Limite de complexité accidentelle = 1O92 = 1*3 
+            
+            // Pour appeler cet algo , on admet atteindre 1/3 de la LCA sur 1/6 de la duree de vie du projet
+            
+            
+            
+            
+            return 0;
+        }
+        // cette methode est appellee lorsque le projet admet un point de non retour ~= 1056
+        public uint pondreUneDerniereFeature()
+        {
+            return 0;
         }
 
    
