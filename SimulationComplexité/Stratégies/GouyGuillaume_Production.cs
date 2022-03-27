@@ -29,10 +29,10 @@ namespace SimulationComplexité.Stratégies
             _iteration ++;
             uint investissementQualite = this.soustractionInvestissementProduitInvestQualitéNull(valeurProduiteBrute, _iteration , complexitéAccidentelleActuelle);
 
-            if (valeurProduiteBrute > 2 && refactoEfficace == true)
+            /*if (valeurProduiteBrute > 2 && refactoEfficace == true)
             {
                 investissementQualite =
-                    this.admettreCroissanceComplexiteAccidentellePhaseAscendate(investissementQualite/*,ref _perdreEnQualite*/);    
+                    this.admettreCroissanceComplexiteAccidentellePhaseAscendate(investissementQualite/*,ref _perdreEnQualite);    
             }
 
             if (complexitéAccidentelleActuelle > seuilComplexiteAdmis && valeurProduiteBrute > 2 && _iteration < projetMort)
@@ -40,7 +40,7 @@ namespace SimulationComplexité.Stratégies
                
                 investissementQualite = this.refacto(complexitéAccidentelleActuelle , valeurProduiteBrute , ref refactoEfficace);
             }
-            
+            */
             
             return investissementQualite;
         }
